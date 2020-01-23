@@ -6,13 +6,217 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:background="#9C27B0">
+
+            <LinearLayout
+                android:id="@+id/textNumContainer"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@+id/textInfoContainer"
+                android:gravity="clip_horizontal"
+                android:minWidth="0dp"
+                android:orientation="vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="false">
+
+                <TextView
+                    android:id="@+id/profitNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="XXXXX"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/groupPointsNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:autoText="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="XXXXX"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:id="@+id/balanceNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="XXXXX"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fillTextContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/masterImage"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Punkty własne"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/masterPointsInsert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:height="80dp"
+                    android:background="#FADF2164"
+                    android:backgroundTint="#9C27B0"
+                    android:backgroundTintMode="multiply"
+                    android:ems="6"
+                    android:hapticFeedbackEnabled="false"
+                    android:inputType="number"
+                    android:maxHeight="80dp"
+                    android:minHeight="80dp"
+                    android:shadowRadius="0"
+                    android:textColorHighlight="#9C27B0"
+                    android:textColorLink="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/textInfoContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/fillTextContainer"
+                android:gravity="clip_horizontal"
+                android:minWidth="0dp"
+                android:orientation="vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="false">
+
+                <TextView
+                    android:id="@+id/profitText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Równowaga:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/groupPointsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:autoText="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Punkty grupy:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:id="@+id/balanceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Równowaga:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/masterImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentBottom="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:foregroundGravity="center_vertical"
+                tools:srcCompat="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:backgroundTintMode="add"
+            android:hapticFeedbackEnabled="false">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:background="#9C27B0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/calculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#9C27B0"
+                    android:text="Calculate" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0"
+                    android:background="#1D1C1C" />
+
+                <Button
+                    android:id="@+id/addItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="#9C27B0"
+                    android:text="add group" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
