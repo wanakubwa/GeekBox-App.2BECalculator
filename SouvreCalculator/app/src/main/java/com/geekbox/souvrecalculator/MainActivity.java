@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Group> getGroupsFromDb(){
         ArrayList<Group> groups = new ArrayList<>();
 
-        for(int i = 0; i < 25; i++ ){
+        for(int i = 0; i < 5; i++ ){
             Group group = new Group();
             group.setPoints(0);
             group.setProfitLvl(0);

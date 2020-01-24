@@ -48,34 +48,26 @@ public class MyAdapter extends ArrayAdapter<Group> {
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ViewHolder holder;
-        if(convertView == null){
-            holder = new ViewHolder();
-
             LayoutInflater inflater = LayoutInflater.from(_context);
             View view = inflater.inflate(R.layout.list_element, null);
 
-            convertView = view;
-            convertView.setTag(holder);
-
-            //EditText pointsText = (EditText) view.findViewById(R.id.groupListPointsInsert);
-            holder.editText = (EditText) view.findViewById(R.id.groupListPointsInsert);
+            // Getting all display fields from screen.
+            EditText editText = (EditText) view.findViewById(R.id.groupListPointsInsert);
             TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
             TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
 
             profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()));
             groupName.setText("G" + position);
-        }
-        else
-        {
-            holder = (ViewHolder) convertView.getTag();
-        }
+
             final Group group = getItem(position);
+
+            // Set display number if different than 0.
             if(group.getPoints() != 0){
-                holder.editText.setText(String.valueOf(group.getPoints()));
+                editText.setText(String.valueOf(group.getPoints()));
             }
 
-            holder.editText.addTextChangedListener(new TextWatcher() {
+            // Adding listener to watch when user input some data into field.
+            editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -90,26 +82,23 @@ public class MyAdapter extends ArrayAdapter<Group> {
             public void afterTextChanged(Editable editable) {
                 String valueText = editable.toString();
 
+                // Validations.
                 if(valueText.equals(null) || valueText.equals("")){
                     valueText = "0";
                 }
 
-                double value = Double.parseDouble(valueText);
+                double value;
+                try{
+                    value = Double.parseDouble(valueText);
+                }
+                catch(NumberFormatException ex){
+                    Toast.makeText(_context, "Zła wartość!", Toast.LENGTH_SHORT).show();
+                    value = 0;
+                }
                 group.setPoints(value);
             }
         });
 
-        return convertView;
+        return view;
     }
-
-    public void upadatePointsNumber(int position, double value){
-        Group group = getItem(position);
-        group.setPoints(value);
-
-        Toast.makeText(_context,String.valueOf(value), Toast.LENGTH_SHORT);
-    }
-}
-
-class ViewHolder{
-    public EditText editText;
 }
