@@ -69,7 +69,8 @@
             android:background="@drawable/text_field_v3"
             android:backgroundTintMode="add"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal"
+            android:numeric="integer|decimal" />
     </LinearLayout>
 
 </LinearLayout>
