@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/listItemBox"
     android:layout_width="300dp"
-    android:layout_height="80dp"
+    android:layout_height="80sp"
     android:layout_centerVertical="false"
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="10dp"
@@ -12,12 +12,13 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="5sp"
-    android:weightSum="4">
+    android:weightSum="0">
 
     <RelativeLayout
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:layout_weight="0"
         android:gravity="center_horizontal|center_vertical">
 
         <ImageView
@@ -25,33 +26,37 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/calculator" />
+            android:layout_weight="0"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/circle_shape" />
 
         <TextView
             android:id="@+id/grouplvlNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="@font/roboto_medium"
             android:text="21%"
-            android:textSize="24sp" />
+            android:textColor="#562763"
+            android:textSize="28sp" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/groupNameText"
-        android:layout_width="15dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="3sp"
-        android:layout_weight="0.5"
+        android:layout_marginLeft="8sp"
+        android:layout_weight="0"
+        android:fontFamily="@font/roboto"
         android:text="G55"
-        android:textSize="24sp" />
+        android:textColor="#E8FFFFFF"
+        android:textSize="28sp" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="10sp"
-        android:layout_weight="2"
+        android:layout_weight="0"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical">
 
@@ -59,7 +64,10 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2sp"
             android:text="Punkty grupy"
+            android:textColor="#E8FFFFFF"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <EditText
@@ -70,7 +78,10 @@
             android:backgroundTintMode="add"
             android:ems="10"
             android:inputType="number|numberDecimal"
-            android:numeric="integer|decimal" />
+            android:numeric="integer|decimal"
+            android:textColorHighlight="#9C27B0"
+            android:textColorLink="#D7BCD5"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </LinearLayout>

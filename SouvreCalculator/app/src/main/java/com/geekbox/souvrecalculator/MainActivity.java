@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Group> getGroupsFromDb(){
         ArrayList<Group> groups = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++ ){
+        for(int i = 0; i < 3; i++ ){
             Group group = new Group();
             group.setPoints(0);
             group.setProfitLvl(0);
@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Action to be done when calculate button pressed.
     private void onCalculateButtonPress(){
-        Toast.makeText(this.getBaseContext(), "Kalkulacje robie juz!", Toast.LENGTH_SHORT).show();
         _controller.calculateValues();
     }
 

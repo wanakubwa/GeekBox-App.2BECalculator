@@ -56,8 +56,8 @@ public class MyAdapter extends ArrayAdapter<Group> {
             TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
             TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
 
-            profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()));
-            groupName.setText("G" + position);
+            profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()) + "%");
+            groupName.setText("G" + (position + 1));
 
             final Group group = getItem(position);
 
