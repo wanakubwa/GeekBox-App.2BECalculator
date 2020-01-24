@@ -48,20 +48,34 @@ public class MyAdapter extends ArrayAdapter<Group> {
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(_context);
+        ViewHolder holder;
+        if(convertView == null){
+            holder = new ViewHolder();
 
-        View view = inflater.inflate(R.layout.list_element, null);
+            LayoutInflater inflater = LayoutInflater.from(_context);
+            View view = inflater.inflate(R.layout.list_element, null);
 
-        final EditText pointsText = (EditText) view.findViewById(R.id.groupListPointsInsert);
-        TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
-        TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
+            convertView = view;
+            convertView.setTag(holder);
 
-        pointsText.setFocusable(true);
+            //EditText pointsText = (EditText) view.findViewById(R.id.groupListPointsInsert);
+            holder.editText = (EditText) view.findViewById(R.id.groupListPointsInsert);
+            TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
+            TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
 
-        profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()));
-        groupName.setText("G" + position);
+            profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()));
+            groupName.setText("G" + position);
+        }
+        else
+        {
+            holder = (ViewHolder) convertView.getTag();
+        }
+            final Group group = getItem(position);
+            if(group.getPoints() != 0){
+                holder.editText.setText(String.valueOf(group.getPoints()));
+            }
 
-        pointsText.addTextChangedListener(new TextWatcher() {
+            holder.editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -76,23 +90,16 @@ public class MyAdapter extends ArrayAdapter<Group> {
             public void afterTextChanged(Editable editable) {
                 String valueText = editable.toString();
 
-                Group group = getItem(position);
                 if(valueText.equals(null) || valueText.equals("")){
                     valueText = "0";
                 }
 
                 double value = Double.parseDouble(valueText);
                 group.setPoints(value);
-
-                pointsText.removeTextChangedListener(this);
-                pointsText.setText(valueText);
-                pointsText.addTextChangedListener(this);
-                
-                Toast.makeText(_context, String.valueOf(group.getPoints()), Toast.LENGTH_SHORT).show();
             }
         });
 
-        return view;
+        return convertView;
     }
 
     public void upadatePointsNumber(int position, double value){
@@ -101,4 +108,8 @@ public class MyAdapter extends ArrayAdapter<Group> {
 
         Toast.makeText(_context,String.valueOf(value), Toast.LENGTH_SHORT);
     }
+}
+
+class ViewHolder{
+    public EditText editText;
 }
