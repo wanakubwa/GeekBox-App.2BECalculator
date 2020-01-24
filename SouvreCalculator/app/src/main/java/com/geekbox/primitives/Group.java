@@ -3,11 +3,10 @@ package com.geekbox.primitives;
 import android.widget.EditText;
 
 public class Group {
-    private double _profitLvl;
+    private int _profitLvl;
     private double _points;
-    EditText _pointsText;
 
-    public double getProfitLvl(){
+    public int getProfitLvl(){
         return _profitLvl;
     }
 
@@ -15,18 +14,11 @@ public class Group {
         return _points;
     }
 
-    public void setProfitLvl(double lvl){
+    public void setProfitLvl(int lvl){
         _profitLvl = lvl;
     }
 
     public void setPoints(double points){
         _points = points;
-    }
-
-    public void setPointsText(EditText pointsText){
-        _pointsText = pointsText;
-    }
-    public EditText getPointsText(){
-        return _pointsText;
     }
 }

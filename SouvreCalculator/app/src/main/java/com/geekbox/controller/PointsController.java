@@ -3,6 +3,8 @@ package com.geekbox.controller;
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.souvrecalculator.MainActivity;
 
+import java.text.DecimalFormat;
+
 public class PointsController {
     private PointsEngine _model;
     private MainActivity _view;
@@ -17,5 +19,26 @@ public class PointsController {
      */
     public void initialize(){
         _view.setListViewElemnts(_model.getListElements());
+    }
+
+    public void setMasterPoints(double points){
+        _model.setMasterPoints(points);
+    }
+
+    public void calculateValues(){
+        double masterPoints = _view.getMastersPoints();
+        _model.setMasterPoints(masterPoints);
+
+        _model.calculateValues();
+
+        double profit = _model.getProfit();
+        double pointsSum = _model.getPointsSum();
+        double balance = _model.getBalancePercentage();
+        int masterLvl = _model.getMasterLvl();
+
+        _view.setProfitOnScreen(profit);
+        _view.setPointsSumOnScreen(pointsSum);
+        _view.setBalanceOnScreen(balance);
+        _view.setMasterLvlOnScreen(masterLvl);
     }
 }

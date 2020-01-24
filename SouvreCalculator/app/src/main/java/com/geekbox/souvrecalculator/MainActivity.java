@@ -15,6 +15,8 @@ import com.geekbox.controller.PointsController;
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.primitives.Group;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView _profit;
     private TextView _pointsSum;
     private TextView _balance;
+    private TextView _masterLvl;
     private Button _calculateBtn;
     private ListView _listView;
 
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         _balance = (TextView) findViewById(R.id.balanceNum);
         _calculateBtn = (Button) findViewById(R.id.calculateBtn);
         _listView = (ListView) findViewById(R.id.gropListView);
+        _masterLvl = (TextView) findViewById(R.id.masterLvl);
+
+        // Setting default statements of texts on screen.
+        _masterPoints.setText("0");
+        _profit.setText("0");
+        _pointsSum.setText("0");
+        _balance.setText("0");
 
         // Buttons initializing listeners actions.
         buttonsActionsInitialize();
@@ -84,10 +94,63 @@ public class MainActivity extends AppCompatActivity {
     // Action to be done when calculate button pressed.
     private void onCalculateButtonPress(){
         Toast.makeText(this.getBaseContext(), "Kalkulacje robie juz!", Toast.LENGTH_SHORT).show();
+        _controller.calculateValues();
     }
 
     public void setListViewElemnts(ArrayList<Group> groups){
         MyAdapter adapter = new MyAdapter(this, R.layout.list_element, groups);
         _listView.setAdapter(adapter);
+    }
+
+    /**
+     * Displaying short error message on screen as a Toast popout.
+     * @param text Text to display on screen.
+     */
+    public void displayErrorMessage(String text){
+        Toast.makeText(this.getBaseContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Getting masters points as a double and validate for NumberFormatException.
+     * If typed number is equals null or empty then write 0 in text view.
+     * @return Masters points typed on text fill.
+     */
+    public double getMastersPoints(){
+        String points = _masterPoints.getText().toString();
+        double pointsValue = 0;
+
+        if(points.equals(null) || points.equals("")){
+            points = "0";
+            _masterPoints.setText(points);
+        }
+
+        try{
+            pointsValue = Double.valueOf(points);
+        }
+        catch(NumberFormatException ex){
+            displayErrorMessage("Niepoprawna liczba Twoich punktów!");
+        }
+
+        return pointsValue;
+    }
+
+    public void setProfitOnScreen(double value){
+        DecimalFormat format = new DecimalFormat("#.##");
+
+        String text = String.valueOf(format.format(value));
+        _profit.setText(text +" zł");
+    }
+    public void setPointsSumOnScreen(double value){
+        DecimalFormat format = new DecimalFormat("#.##");
+
+        _pointsSum.setText(String.valueOf(format.format(value)) + " pkt.");
+    }
+    public void setBalanceOnScreen(double value){
+        DecimalFormat format = new DecimalFormat("#.##");
+
+        _balance.setText(String.valueOf(format.format(value)) + " %");
+    }
+    public void setMasterLvlOnScreen(int value){
+        _masterLvl.setText(String.valueOf(value) + " %");
     }
 }
