@@ -15,9 +15,9 @@ import com.geekbox.controller.PointsController;
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.primitives.Group;
 
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView _balance;
     private TextView _masterLvl;
     private Button _calculateBtn;
+    private Button _addItemBtn;
     private ListView _listView;
+    private MyAdapter _adapter;
 
     private PointsController _controller;
 
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         _pointsSum = (TextView) findViewById(R.id.groupPointsNum);
         _balance = (TextView) findViewById(R.id.balanceNum);
         _calculateBtn = (Button) findViewById(R.id.calculateBtn);
+        _addItemBtn = (Button) findViewById(R.id.addItemBtn);
         _listView = (ListView) findViewById(R.id.gropListView);
         _masterLvl = (TextView) findViewById(R.id.masterLvl);
 
@@ -68,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
         return pointsEngine;
     }
 
-    // Creating groups instances.
+    /**
+     * Returning groups from database if exists.
+     * @return Groups from DB.
+     */
     private ArrayList<Group> getGroupsFromDb(){
         ArrayList<Group> groups = new ArrayList<>();
 
@@ -82,23 +88,32 @@ public class MainActivity extends AppCompatActivity {
         return groups;
     }
 
+    /**
+     * Initializing all buttons actions when pressed on this view.
+     */
     private void buttonsActionsInitialize(){
         _calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCalculateButtonPress();
+                _controller.calculateValues();
+            }
+        });
+
+        _addItemBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _controller.addNewGroupToList();
             }
         });
     }
 
-    // Action to be done when calculate button pressed.
-    private void onCalculateButtonPress(){
-        _controller.calculateValues();
-    }
-
+    /**
+     * Setting list view and initialize elements on it.
+     * @param groups Elements to display on screen.
+     */
     public void setListViewElemnts(ArrayList<Group> groups){
-        MyAdapter adapter = new MyAdapter(this, R.layout.list_element, groups);
-        _listView.setAdapter(adapter);
+        _adapter = new MyAdapter(this, R.layout.list_element, groups);
+        _listView.setAdapter(_adapter);
     }
 
     /**
@@ -133,6 +148,9 @@ public class MainActivity extends AppCompatActivity {
         return pointsValue;
     }
 
+    public void actualizeList(){
+        _adapter.notifyDataSetChanged();
+    }
     public void setProfitOnScreen(double value){
         DecimalFormat format = new DecimalFormat("#.##");
 

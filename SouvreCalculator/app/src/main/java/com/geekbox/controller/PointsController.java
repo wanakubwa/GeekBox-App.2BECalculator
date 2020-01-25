@@ -1,6 +1,7 @@
 package com.geekbox.controller;
 
 import com.geekbox.domain.PointsEngine;
+import com.geekbox.primitives.Group;
 import com.geekbox.souvrecalculator.MainActivity;
 
 import java.text.DecimalFormat;
@@ -45,5 +46,14 @@ public class PointsController {
         _view.setPointsSumOnScreen(pointsSum);
         _view.setBalanceOnScreen(balance);
         _view.setMasterLvlOnScreen(masterLvl);
+    }
+
+    public void addNewGroupToList(){
+        Group group = new Group();
+        group.setPoints(0);
+        group.setProfitLvl(0);
+
+        _model.addItemToList(group);
+        _view.actualizeList();
     }
 }

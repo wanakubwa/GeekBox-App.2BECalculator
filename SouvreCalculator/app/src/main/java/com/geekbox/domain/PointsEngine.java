@@ -23,7 +23,9 @@ public class PointsEngine {
     public void setListElements(ArrayList<Group> listElements){
         _listElements = listElements;
     }
-
+    public void addItemToList(Group group){
+        _listElements.add(group);
+    }
     public ArrayList<Group> getListElements(){
         return _listElements;
     }
