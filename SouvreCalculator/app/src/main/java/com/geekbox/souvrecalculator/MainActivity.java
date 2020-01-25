@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.geekbox.adapters.MyAdapter;
 import com.geekbox.controller.PointsController;

@@ -13,9 +13,35 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:background="#562763"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5sp"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/hamburger_02" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0"
+                android:scaleType="fitStart"
+                app:srcCompat="@drawable/logo_02" />
+
+        </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="140dp"
             android:layout_weight="1"
             android:background="#743376">
 
@@ -202,6 +228,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:background="#e2cfe1"
             android:backgroundTintMode="add"
             android:hapticFeedbackEnabled="false">
 
@@ -209,6 +236,7 @@
                 android:id="@+id/gropListView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:backgroundTintMode="add"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="1dp" />
         </RelativeLayout>
