@@ -46,6 +46,8 @@ public class PointsController {
         _view.setPointsSumOnScreen(pointsSum);
         _view.setBalanceOnScreen(balance);
         _view.setMasterLvlOnScreen(masterLvl);
+
+        _view.actualizeList();
     }
 
     public void addNewGroupToList(){

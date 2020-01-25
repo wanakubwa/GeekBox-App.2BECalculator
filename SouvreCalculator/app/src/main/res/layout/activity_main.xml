@@ -210,10 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@android:color/transparent"
-                android:dividerHeight="10dp"
-                android:paddingLeft="40dp"
-                android:paddingTop="15dp"
-                android:paddingRight="40dp" />
+                android:dividerHeight="1dp" />
         </RelativeLayout>
 
         <RelativeLayout
