@@ -15,9 +15,9 @@ public class PointsEngine {
     private double _mastersPoints = 0;
     private int _masterLvl = 0;
     private double _profit = 0;
-    private double _balancePercentage = 100;
-
+    private double _balancePercentage = 0;
     private double _pointsSum = 0;
+
     private ArrayList<Group> _listElements = new ArrayList<>();
 
     public void setListElements(ArrayList<Group> listElements){

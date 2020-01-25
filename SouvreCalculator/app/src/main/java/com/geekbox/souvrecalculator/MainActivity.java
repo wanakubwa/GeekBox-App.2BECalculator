@@ -137,19 +137,19 @@ public class MainActivity extends AppCompatActivity {
         DecimalFormat format = new DecimalFormat("#.##");
 
         String text = String.valueOf(format.format(value));
-        _profit.setText(text +" zł");
+        _profit.setText(text +"zł");
     }
     public void setPointsSumOnScreen(double value){
         DecimalFormat format = new DecimalFormat("#.##");
 
-        _pointsSum.setText(String.valueOf(format.format(value)) + " pkt.");
+        _pointsSum.setText(String.valueOf(format.format(value)) + "pkt.");
     }
     public void setBalanceOnScreen(double value){
         DecimalFormat format = new DecimalFormat("#.##");
 
-        _balance.setText(String.valueOf(format.format(value)) + " %");
+        _balance.setText(String.valueOf(format.format(value)) + "%");
     }
     public void setMasterLvlOnScreen(int value){
-        _masterLvl.setText(String.valueOf(value) + " %");
+        _masterLvl.setText(String.valueOf(value) + "%");
     }
 }

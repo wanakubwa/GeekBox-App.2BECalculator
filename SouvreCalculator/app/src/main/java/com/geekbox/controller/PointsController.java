@@ -19,6 +19,11 @@ public class PointsController {
      */
     public void initialize(){
         _view.setListViewElemnts(_model.getListElements());
+
+        _view.setMasterLvlOnScreen(_model.getMasterLvl());
+        _view.setProfitOnScreen(_model.getProfit());
+        _view.setPointsSumOnScreen(_model.getPointsSum());
+        _view.setBalanceOnScreen(_model.getBalancePercentage());
     }
 
     public void setMasterPoints(double points){
