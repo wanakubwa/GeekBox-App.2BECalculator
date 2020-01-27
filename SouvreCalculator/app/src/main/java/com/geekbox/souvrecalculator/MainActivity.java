@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Setting default statements of texts on screen.
         _masterPoints.setText("0");
-        _profit.setText("0");
-        _pointsSum.setText("0");
-        _balance.setText("0");
+        _profit.setText("0zł");
+        _pointsSum.setText("0pkt.");
+        _balance.setText("0%");
 
         // Buttons initializing listeners actions.
         buttonsActionsInitialize();

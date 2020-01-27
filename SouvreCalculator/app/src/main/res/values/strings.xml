@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SouvreCalculator</string>
+    
+    <string-array name="itemListSpinnerActions">
+        <item>Usuń</item>
+    </string-array>
 </resources>
