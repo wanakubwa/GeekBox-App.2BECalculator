@@ -228,7 +228,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:background="#e2cfe1"
             android:backgroundTintMode="add"
             android:hapticFeedbackEnabled="false">
 
@@ -245,46 +244,95 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="0"
-            android:background="#9C27B0">
+            android:background="#753376">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/calculateBtn"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="#753376"
-                    android:drawableLeft="@drawable/calculator"
-                    android:gravity="left|center_vertical"
-                    android:paddingLeft="@android:dimen/app_icon_size"
-                    android:text="Calculate"
-                    android:textColor="#F8F7F7" />
+                    android:layout_weight="2">
 
-                <View
-                    android:id="@+id/divider3"
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0"
-                    android:background="#FFFFFF"
+                    <Button
+                        android:id="@+id/calculateBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:gravity="left|center_vertical" />
 
-                    />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/addItemBtn"
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="20sp"
+                            android:layout_height="20sp"
+                            app:srcCompat="@drawable/calculator" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Przelicz"
+                            android:textColor="#FFFFFF" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="#753376"
-                    android:drawableLeft="@drawable/plussign"
-                    android:gravity="left|center_vertical"
-                    android:paddingLeft="@android:dimen/app_icon_size"
-                    android:text="add group"
-                    android:textColor="#FFFFFF" />
+                    android:layout_weight="2">
+
+                    <Button
+                        android:id="@+id/addItemBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:gravity="left|center_vertical" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/plusSign_Img"
+                            android:layout_width="20sp"
+                            android:layout_height="20sp"
+                            app:srcCompat="@drawable/plussign" />
+
+                        <TextView
+                            android:id="@+id/addItem_Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Dodaj grupe"
+                            android:textColor="#FFFFFF" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
             </LinearLayout>
         </RelativeLayout>
 
