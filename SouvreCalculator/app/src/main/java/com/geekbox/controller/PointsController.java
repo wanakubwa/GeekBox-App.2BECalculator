@@ -5,6 +5,7 @@ import com.geekbox.primitives.Group;
 import com.geekbox.souvrecalculator.MainActivity;
 
 import java.text.DecimalFormat;
+import java.util.NoSuchElementException;
 
 public class PointsController {
     private PointsEngine _model;
@@ -31,11 +32,21 @@ public class PointsController {
         _model.setMasterPoints(points);
     }
 
+    /**
+     * Setting values on model instance and calculate.
+     * Printing on view instace all ammounts from model.
+     */
     public void calculateValues(){
         double masterPoints = _view.getMastersPoints();
         _model.setMasterPoints(masterPoints);
 
-        _model.calculateValues();
+        // Catching an exception when user dont have any group added to list.
+        try{
+            _model.calculateValues();
+        }
+        catch(NoSuchElementException ex){
+            _view.displayErrorMessage("Musisz posiadać co najmniej jedną grupę!");
+        }
 
         double profit = _model.getProfit();
         double pointsSum = _model.getPointsSum();
@@ -50,6 +61,9 @@ public class PointsController {
         _view.actualizeList();
     }
 
+    /**
+     * Adding new instance of model collection and refreshing listview from view instance.
+     */
     public void addNewGroupToList(){
         Group group = new Group();
         group.setPoints(0);

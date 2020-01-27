@@ -1,9 +1,6 @@
 package com.geekbox.adapters;
 
 import android.content.Context;
-import android.icu.text.DecimalFormat;
-import android.os.Build;
-import android.os.Debug;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -12,18 +9,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 
 import com.geekbox.primitives.Group;
+import com.geekbox.souvrecalculator.MySpinner;
 import com.geekbox.souvrecalculator.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -51,26 +45,25 @@ public class MyAdapter extends ArrayAdapter<Group> {
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        // TODO: Złapac to to kalsy zeby nie tworzyc na nowo za kazdym razem.
-        LayoutInflater inflater = LayoutInflater.from(_context);
-        View view = inflater.inflate(R.layout.list_element, null);
+            LayoutInflater inflater = LayoutInflater.from(_context);
+            View view = inflater.inflate(R.layout.list_element, null);
 
-        // Getting all display fields from screen.
-        EditText editText = (EditText) view.findViewById(R.id.groupListPointsInsert);
-        TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
-        TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
+            // Getting all display fields from screen.
+            EditText editText = (EditText) view.findViewById(R.id.groupListPointsInsert);
+            TextView profitLvl = (TextView) view.findViewById(R.id.grouplvlNum);
+            TextView groupName = (TextView) view.findViewById(R.id.groupNameText);
 
-        // Spinner find from list element view initialize adapter for it with actions texts.
-        Spinner spinner = (Spinner) view.findViewById(R.id.listSpinner);
-        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(_context, R.array.itemListSpinnerActions,
-                android.R.layout.simple_spinner_item);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
+            // Spinner find from list element view initialize adapter for it with actions texts.
+            MySpinner spinner = (MySpinner) view.findViewById(R.id.listSpinner);
+            ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(_context, R.array.itemListSpinnerActions,
+                    android.R.layout.simple_spinner_item);
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(spinnerAdapter);
 
+        // Setting texts on view.
         profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()) + "%");
         groupName.setText("G" + (position + 1));
 
-        // TODO: Zrobic to po ludzku z podejsciem holder.
         final boolean[] isInitialize = {true};
         final Group group = getItem(position);
 
