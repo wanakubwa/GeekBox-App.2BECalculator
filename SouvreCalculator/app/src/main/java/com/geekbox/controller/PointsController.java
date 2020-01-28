@@ -1,6 +1,7 @@
 package com.geekbox.controller;
 
 import com.geekbox.domain.PointsEngine;
+import com.geekbox.domain.PointsEngineException;
 import com.geekbox.primitives.Group;
 import com.geekbox.souvrecalculator.MainActivity;
 
@@ -65,11 +66,17 @@ public class PointsController {
      * Adding new instance of model collection and refreshing listview from view instance.
      */
     public void addNewGroupToList(){
+
         Group group = new Group();
         group.setPoints(0);
         group.setProfitLvl(0);
 
-        _model.addItemToList(group);
+        try{
+            _model.addItemToList(group);
+        }
+        catch (PointsEngineException ex){
+            _view.displayErrorMessage(ex.getMessage());
+        }
         _view.actualizeList();
     }
 }

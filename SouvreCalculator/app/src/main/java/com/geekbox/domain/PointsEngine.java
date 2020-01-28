@@ -23,8 +23,12 @@ public class PointsEngine {
     public void setListElements(ArrayList<Group> listElements){
         _listElements = listElements;
     }
-    public void addItemToList(Group group){
-        _listElements.add(group);
+    public void addItemToList(Group group) throws PointsEngineException {
+        if(_listElements.size() >= 25){
+            throw new PointsEngineException("Posiadasz już 25 grup!");
+        }else {
+            _listElements.add(group);
+        }
     }
     public ArrayList<Group> getListElements(){
         return _listElements;

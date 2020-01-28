@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    <include layout="@layout/custom_action_bar" />-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,7 +75,7 @@
                         android:layout_alignParentBottom="false"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="21%"
+                        android:text="0%"
                         android:textColor="#562763"
                         android:textSize="20sp" />
                 </RelativeLayout>
@@ -278,7 +280,7 @@
                             android:id="@+id/imageView2"
                             android:layout_width="20sp"
                             android:layout_height="20sp"
-                            app:srcCompat="@drawable/calculator" />
+                            app:srcCompat="@drawable/calculator_sign" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -319,7 +321,7 @@
                             android:id="@+id/plusSign_Img"
                             android:layout_width="20sp"
                             android:layout_height="20sp"
-                            app:srcCompat="@drawable/plussign" />
+                            app:srcCompat="@drawable/plus_sign" />
 
                         <TextView
                             android:id="@+id/addItem_Text"

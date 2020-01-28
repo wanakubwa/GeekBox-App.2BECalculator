@@ -2,14 +2,19 @@ package com.geekbox.souvrecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+// New androidx toolbar.
+import androidx.appcompat.widget.Toolbar;
 
 import com.geekbox.adapters.MyAdapter;
 import com.geekbox.controller.PointsController;
@@ -18,7 +23,6 @@ import com.geekbox.primitives.Group;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private MyAdapter _adapter;
 
     private PointsController _controller;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         _profit.setText("0zł");
         _pointsSum.setText("0pkt.");
         _balance.setText("0%");
+        _listView.setFocusable(true);
 
         // Buttons initializing listeners actions.
         buttonsActionsInitialize();
@@ -61,6 +67,24 @@ public class MainActivity extends AppCompatActivity {
         PointsEngine model = getPointsEngine();
         _controller = new PointsController(model, this);
         _controller.initialize();
+
+        closeKeyboard();
+    }
+
+    protected Toolbar getActionBarToolbar() {
+        if (mToolbar == null) {
+            //mToolbar = (Toolbar) findViewById(R.id.toolBar2);
+            if (mToolbar != null) {
+                setSupportActionBar(mToolbar);
+            }
+        }
+        return mToolbar;
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        getActionBarToolbar();
     }
 
     // Creating model instance.
@@ -70,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
         // Getting groups initialize.
         pointsEngine.setListElements(getGroupsFromDb());
         return pointsEngine;
+    }
+
+    private void closeKeyboard(){
+        View view = this.getCurrentFocus();
+        if(view != null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     /**
@@ -96,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         _calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                closeKeyboard();
                 _controller.calculateValues();
             }
         });
@@ -103,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         _addItemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                closeKeyboard();
                 _controller.addNewGroupToList();
             }
         });
