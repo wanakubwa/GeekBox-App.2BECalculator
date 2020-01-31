@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         // Spinner initializing array strings content.
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getBaseContext(), R.array.languageSpinner,
                 android.R.layout.simple_spinner_item);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAdapter.setDropDownViewResource(R.layout.spinner_text);
         toolSpinner.setAdapter(spinnerAdapter);
 
         // Setting default statements of texts on screen.

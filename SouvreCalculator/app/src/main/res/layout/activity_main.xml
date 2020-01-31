@@ -28,7 +28,8 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="5sp"
                 android:layout_weight="0"
-                android:background="@drawable/hamburger_02" />
+                android:background="@drawable/hamburger_02"
+                android:dropDownWidth="80dp" />
 
             <ImageView
                 android:id="@+id/imageView4"
