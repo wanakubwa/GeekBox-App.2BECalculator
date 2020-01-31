@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2BE Calcolatrice</string>
+    <string name="currency">\u20ac</string>
+    <string name="pointsShort">pun.</string>
+
+    <string name="ownPoints">Punti propri</string>
+    <string name="profit">Commissione:</string>
+    <string name="groupsPoints">Punti gruppo:</string>
+    <string name="balance">Equilibrio</string>
+
+    <!--    Buttons     -->
+    <string name="calculateBtn">Ricalcolare</string>
+    <string name="addGroupBtn">Nuovo gruppo</string>
+    <string name="rowGroupPoints">Punti</string>
+
+    <string-array name="itemListSpinnerActions">
+        <item>Cancellare</item>
+    </string-array>
+</resources>

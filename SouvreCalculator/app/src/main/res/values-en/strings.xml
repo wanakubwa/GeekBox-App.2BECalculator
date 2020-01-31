@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2BE Calculator</string>
+    <string name="currency">$</string>
+    <string name="pointsShort">pts.</string>
+
+    <string name="ownPoints">Own points</string>
+    <string name="profit">Profit:</string>
+    <string name="groupsPoints">Groups points:</string>
+    <string name="balance">Balance:</string>
+
+    <!--    Buttons     -->
+    <string name="calculateBtn">Calculate</string>
+    <string name="addGroupBtn">Add group</string>
+    <string name="rowGroupPoints">Points</string>
+
+    <string-array name="itemListSpinnerActions">
+        <item>Delete</item>
+    </string-array>
+</resources>

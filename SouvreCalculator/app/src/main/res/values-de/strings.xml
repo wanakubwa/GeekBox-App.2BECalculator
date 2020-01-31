@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2BE Rechner</string>
+    <string name="currency">\u20ac</string>
+    <string name="pointsShort">pts.</string>
+
+    <string name="ownPoints">Eigene punkte</string>
+    <string name="profit">Provision:</string>
+    <string name="groupsPoints">Punkte gruppieren:</string>
+    <string name="balance">Balance:</string>
+    <string name="calculateBtn">Neuberechnung</string>
+    <string name="addGroupBtn">Neue Gruppe</string>
+    <string name="rowGroupPoints">Punkte</string>
+
+    <string-array name="itemListSpinnerActions">
+        <item>Löschen Sie</item>
+    </string-array>
+</resources>

@@ -1,11 +1,17 @@
 package com.geekbox.controller;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.domain.PointsEngineException;
 import com.geekbox.primitives.Group;
 import com.geekbox.souvrecalculator.MainActivity;
 
-import java.text.DecimalFormat;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 
 public class PointsController {
@@ -21,16 +27,37 @@ public class PointsController {
      * Initializing view elements.
      */
     public void initialize(){
-        _view.setListViewElemnts(_model.getListElements());
+        // Language initialize.
+        String language = getLanguage();
+        changeLanguage(language);
 
+        _view.setListViewElemnts(_model.getListElements());
         _view.setMasterLvlOnScreen(_model.getMasterLvl());
         _view.setProfitOnScreen(_model.getProfit());
         _view.setPointsSumOnScreen(_model.getPointsSum());
         _view.setBalanceOnScreen(_model.getBalancePercentage());
     }
 
-    public void setMasterPoints(double points){
-        _model.setMasterPoints(points);
+    public void changeLanguage(String languageID){
+        Locale locale = new Locale(languageID);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.setLocale(locale);
+
+        _view.getBaseContext().getResources().updateConfiguration(configuration, _view.getBaseContext().getResources().getDisplayMetrics());
+
+        // Save data to prferences.
+        SharedPreferences.Editor editor = _view.getSharedPreferences("Settings", Context.MODE_PRIVATE).edit();
+        editor.putString("Language", languageID);
+        editor.apply();
+    }
+
+    private String getLanguage(){
+        SharedPreferences preferences = _view.getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language;
+        language = preferences.getString("Language", "");
+
+        return language;
     }
 
     /**
@@ -78,5 +105,10 @@ public class PointsController {
             _view.displayErrorMessage(ex.getMessage());
         }
         _view.actualizeList();
+    }
+
+    public void resetView(Intent intent) {
+        _view.finish();
+        _view.startActivity(intent);
     }
 }

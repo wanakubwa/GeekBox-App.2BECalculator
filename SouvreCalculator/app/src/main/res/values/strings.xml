@@ -1,7 +1,27 @@
 <resources>
-    <string name="app_name">SouvreCalculator</string>
-    
+    <string name="app_name">2BE Calculator</string>
+    <string name="currency">zł</string>
+    <string name="pointsShort">pkt.</string>
+
+    <string name="ownPoints">Punkty własne</string>
+    <string name="profit">Prowizja:</string>
+    <string name="groupsPoints">Punkty:</string>
+    <string name="balance">Równowaga:</string>
+
+    <!--    Buttons     -->
+    <string name="calculateBtn">Przelicz</string>
+    <string name="addGroupBtn">Nowa grupa</string>
+    <string name="rowGroupPoints">Punkty</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Usuń</item>
+    </string-array>
+
+    <string-array name="languageSpinner">
+        <item>PL</item>
+        <item>EN</item>
+        <item>IT</item>
+        <item>FR</item>
+        <item>DE</item>
     </string-array>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">2BE Calculette</string>
+    <string name="currency">\u20ac</string>
+    <string name="pointsShort">pts.</string>
+
+    <string name="ownPoints">Points propres</string>
+    <string name="profit">Commission:</string>
+    <string name="groupsPoints">Points de groupe:</string>
+    <string name="balance">Équilibre:</string>
+
+    <!--    Buttons     -->
+    <string name="calculateBtn">Recalculer</string>
+    <string name="addGroupBtn">Nouveau groupe</string>
+    <string name="rowGroupPoints">Points</string>
+
+    <string-array name="itemListSpinnerActions">
+        <item>Supprimer</item>
+    </string-array>
+</resources>

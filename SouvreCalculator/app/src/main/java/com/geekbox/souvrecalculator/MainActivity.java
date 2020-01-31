@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,14 +37,20 @@ public class MainActivity extends AppCompatActivity {
     private Button _addItemBtn;
     private ListView _listView;
     private MyAdapter _adapter;
+    private MySpinner toolSpinner;
 
     private PointsController _controller;
     private Toolbar mToolbar;
+
+    private String currency;
+    private String pointsShort;
+    private boolean isInitialize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        isInitialize = true;
 
         _masterPoints = (EditText) findViewById(R.id.masterPointsInsert);
         _profit = (TextView) findViewById(R.id.profitNum);
@@ -52,16 +60,27 @@ public class MainActivity extends AppCompatActivity {
         _addItemBtn = (Button) findViewById(R.id.addItemBtn);
         _listView = (ListView) findViewById(R.id.gropListView);
         _masterLvl = (TextView) findViewById(R.id.masterLvl);
+        toolSpinner = (MySpinner) findViewById(R.id.toolSpinner);
+
+        // Getting names from resources package.
+        pointsShort = getString(R.string.pointsShort);
+        currency = getString(R.string.currency);
+
+        // Spinner initializing array strings content.
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getBaseContext(), R.array.languageSpinner,
+                android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        toolSpinner.setAdapter(spinnerAdapter);
 
         // Setting default statements of texts on screen.
         _masterPoints.setText("0");
-        _profit.setText("0zł");
-        _pointsSum.setText("0pkt.");
+        _profit.setText("0" + currency);
+        _pointsSum.setText("0" + pointsShort);
         _balance.setText("0%");
         _listView.setFocusable(true);
 
         // Buttons initializing listeners actions.
-        buttonsActionsInitialize();
+        listenersInitialize();
 
         // Controller initializing and creating.
         PointsEngine model = getPointsEngine();
@@ -124,7 +143,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Initializing all buttons actions when pressed on this view.
      */
-    private void buttonsActionsInitialize(){
+    private void listenersInitialize(){
+
+        // Calculate btn listener.
         _calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,11 +154,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Add item btn listener.
         _addItemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 closeKeyboard();
                 _controller.addNewGroupToList();
+            }
+        });
+
+        // Initializing tool bar spinner listener.
+        toolSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                if(!isInitialize){
+                    String selectedLanguage = toolSpinner.getSelectedItem().toString();
+                    _controller.changeLanguage(selectedLanguage.toLowerCase());
+                    _controller.resetView(getIntent());
+                }
+                isInitialize = false;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -190,12 +231,12 @@ public class MainActivity extends AppCompatActivity {
         DecimalFormat format = new DecimalFormat("#.##");
 
         String text = String.valueOf(format.format(value));
-        _profit.setText(text +"zł");
+        _profit.setText(text + currency);
     }
     public void setPointsSumOnScreen(double value){
         DecimalFormat format = new DecimalFormat("#.##");
 
-        _pointsSum.setText(String.valueOf(format.format(value)) + "pkt.");
+        _pointsSum.setText(String.valueOf(format.format(value)) + pointsShort);
     }
     public void setBalanceOnScreen(double value){
         DecimalFormat format = new DecimalFormat("#.##");
