@@ -1,11 +1,9 @@
 package com.geekbox.controller;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 
+import com.geekbox.domain.DatabaseEngine;
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.domain.PointsEngineException;
 import com.geekbox.primitives.Group;
@@ -15,27 +13,30 @@ import java.util.Locale;
 import java.util.NoSuchElementException;
 
 public class PointsController {
-    private PointsEngine _model;
-    private MainActivity _view;
+    private PointsEngine model;
+    private MainActivity view;
+    private DatabaseEngine database;
 
-    public PointsController(PointsEngine model, MainActivity view){
-        _model = model;
-        _view = view;
+    public PointsController(PointsEngine model, MainActivity view, DatabaseEngine databaseEngine){
+        this.model = model;
+        this.view = view;
+        this.database = databaseEngine;
     }
 
+    public void initializeLanguageVersion(){
+        // Language initialize.
+        String language = database.getLanguage();
+        changeLanguage(language);
+    }
     /**
      * Initializing view elements.
      */
     public void initialize(){
-        // Language initialize.
-        String language = getLanguage();
-        changeLanguage(language);
-
-        _view.setListViewElemnts(_model.getListElements());
-        _view.setMasterLvlOnScreen(_model.getMasterLvl());
-        _view.setProfitOnScreen(_model.getProfit());
-        _view.setPointsSumOnScreen(_model.getPointsSum());
-        _view.setBalanceOnScreen(_model.getBalancePercentage());
+        view.setListViewElemnts(model.getListElements());
+        view.setMasterLvlOnScreen(model.getMasterLvl());
+        view.setProfitOnScreen(model.getProfit());
+        view.setPointsSumOnScreen(model.getPointsSum());
+        view.setBalanceOnScreen(model.getBalancePercentage());
     }
 
     public void changeLanguage(String languageID){
@@ -44,20 +45,8 @@ public class PointsController {
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
 
-        _view.getBaseContext().getResources().updateConfiguration(configuration, _view.getBaseContext().getResources().getDisplayMetrics());
-
-        // Save data to prferences.
-        SharedPreferences.Editor editor = _view.getSharedPreferences("Settings", Context.MODE_PRIVATE).edit();
-        editor.putString("Language", languageID);
-        editor.apply();
-    }
-
-    private String getLanguage(){
-        SharedPreferences preferences = _view.getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language;
-        language = preferences.getString("Language", "");
-
-        return language;
+        view.getBaseContext().getResources().updateConfiguration(configuration, view.getBaseContext().getResources().getDisplayMetrics());
+        database.saveLanguage(languageID);
     }
 
     /**
@@ -65,28 +54,28 @@ public class PointsController {
      * Printing on view instace all ammounts from model.
      */
     public void calculateValues(){
-        double masterPoints = _view.getMastersPoints();
-        _model.setMasterPoints(masterPoints);
+        double masterPoints = view.getMastersPoints();
+        model.setMasterPoints(masterPoints);
 
         // Catching an exception when user dont have any group added to list.
         try{
-            _model.calculateValues();
+            model.calculateValues();
         }
         catch(NoSuchElementException ex){
-            _view.displayErrorMessage("Musisz posiadać co najmniej jedną grupę!");
+            view.displayErrorMessage("Musisz posiadać co najmniej jedną grupę!");
         }
 
-        double profit = _model.getProfit();
-        double pointsSum = _model.getPointsSum();
-        double balance = _model.getBalancePercentage();
-        int masterLvl = _model.getMasterLvl();
+        double profit = model.getProfit();
+        double pointsSum = model.getPointsSum();
+        double balance = model.getBalancePercentage();
+        int masterLvl = model.getMasterLvl();
 
-        _view.setProfitOnScreen(profit);
-        _view.setPointsSumOnScreen(pointsSum);
-        _view.setBalanceOnScreen(balance);
-        _view.setMasterLvlOnScreen(masterLvl);
+        view.setProfitOnScreen(profit);
+        view.setPointsSumOnScreen(pointsSum);
+        view.setBalanceOnScreen(balance);
+        view.setMasterLvlOnScreen(masterLvl);
 
-        _view.actualizeList();
+        view.actualizeList();
     }
 
     /**
@@ -99,16 +88,16 @@ public class PointsController {
         group.setProfitLvl(0);
 
         try{
-            _model.addItemToList(group);
+            model.addItemToList(group);
         }
         catch (PointsEngineException ex){
-            _view.displayErrorMessage(ex.getMessage());
+            view.displayErrorMessage(ex.getMessage());
         }
-        _view.actualizeList();
+        view.actualizeList();
     }
 
     public void resetView(Intent intent) {
-        _view.finish();
-        _view.startActivity(intent);
+        view.finish();
+        view.startActivity(intent);
     }
 }

@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.geekbox.adapters.MyAdapter;
 import com.geekbox.controller.PointsController;
+import com.geekbox.domain.DatabaseEngine;
 import com.geekbox.domain.PointsEngine;
 import com.geekbox.primitives.Group;
 
@@ -49,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Controller initializing and creating.
+        PointsEngine model = getPointsEngine();
+        DatabaseEngine databaseEngine = getDatabaseEngine();
+        _controller = new PointsController(model, this, databaseEngine);
+        _controller.initializeLanguageVersion();
+
         setContentView(R.layout.activity_main);
         isInitialize = true;
 
@@ -82,12 +89,13 @@ public class MainActivity extends AppCompatActivity {
         // Buttons initializing listeners actions.
         listenersInitialize();
 
-        // Controller initializing and creating.
-        PointsEngine model = getPointsEngine();
-        _controller = new PointsController(model, this);
         _controller.initialize();
 
         closeKeyboard();
+    }
+
+    private DatabaseEngine getDatabaseEngine() {
+        return new DatabaseEngine(this);
     }
 
     protected Toolbar getActionBarToolbar() {
@@ -115,14 +123,6 @@ public class MainActivity extends AppCompatActivity {
         return pointsEngine;
     }
 
-    private void closeKeyboard(){
-        View view = this.getCurrentFocus();
-        if(view != null){
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
     /**
      * Returning groups from database if exists.
      * @return Groups from DB.
@@ -138,6 +138,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return groups;
+    }
+
+    private void closeKeyboard(){
+        View view = this.getCurrentFocus();
+        if(view != null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     /**
