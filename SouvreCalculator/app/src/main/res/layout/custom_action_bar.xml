@@ -21,14 +21,14 @@
         android:layout_weight="0"
         app:srcCompat="@drawable/hamburger_menu" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_weight="0"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/souvre_logo_v2" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="0"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/logo_2be" />
 
 </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

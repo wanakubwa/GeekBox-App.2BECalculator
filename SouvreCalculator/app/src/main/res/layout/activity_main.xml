@@ -38,7 +38,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="0"
                 android:scaleType="fitStart"
-                app:srcCompat="@drawable/logo_02" />
+                app:srcCompat="@drawable/logo_2be" />
 
         </LinearLayout>
 
