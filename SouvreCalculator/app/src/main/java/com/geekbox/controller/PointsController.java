@@ -28,15 +28,12 @@ public class PointsController {
         String language = database.getLanguage();
         changeLanguage(language);
     }
+
     /**
      * Initializing view elements.
      */
     public void initialize(){
         view.setListViewElemnts(model.getListElements());
-        view.setMasterLvlOnScreen(model.getMasterLvl());
-        view.setProfitOnScreen(model.getProfit());
-        view.setPointsSumOnScreen(model.getPointsSum());
-        view.setBalanceOnScreen(model.getBalancePercentage());
     }
 
     public void changeLanguage(String languageID){
@@ -56,6 +53,9 @@ public class PointsController {
     public void calculateValues(){
         double masterPoints = view.getMastersPoints();
         model.setMasterPoints(masterPoints);
+
+        double masterBonus = view.getMasterBonus();
+        model.setMasterBonus(masterBonus);
 
         // Catching an exception when user dont have any group added to list.
         try{

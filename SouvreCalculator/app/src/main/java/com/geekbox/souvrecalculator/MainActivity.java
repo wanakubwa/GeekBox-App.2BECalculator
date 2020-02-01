@@ -29,6 +29,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private EditText _masterPoints;
+    private EditText masterBonus;
     private TextView _profit;
     private TextView _pointsSum;
     private TextView _balance;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         isInitialize = true;
 
         _masterPoints = (EditText) findViewById(R.id.masterPointsInsert);
+        masterBonus = (EditText) findViewById(R.id.masterBonusInsert);
         _profit = (TextView) findViewById(R.id.profitNum);
         _pointsSum = (TextView) findViewById(R.id.groupPointsNum);
         _balance = (TextView) findViewById(R.id.balanceNum);
@@ -80,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
         toolSpinner.setAdapter(spinnerAdapter);
 
         // Setting default statements of texts on screen.
-        _masterPoints.setText("0");
+        _masterPoints.setHint("Punkty");
+        masterBonus.setHint("Bonus");
+
         _profit.setText("0" + currency);
         _pointsSum.setText("0" + pointsShort);
         _balance.setText("0%");
@@ -213,20 +217,42 @@ public class MainActivity extends AppCompatActivity {
      * If typed number is equals null or empty then write 0 in text view.
      * @return Masters points typed on text fill.
      */
-    public double getMastersPoints(){
+    public double getMastersPoints() {
         String points = _masterPoints.getText().toString();
+        double pointsValue = 0;
+
+        if (points.equals(null) || points.equals("")) {
+            points = "0";
+            _masterPoints.setText(points);
+        }
+
+        try {
+            pointsValue = Double.valueOf(points);
+        } catch (NumberFormatException ex) {
+            displayErrorMessage("Niepoprawna liczba Twoich punktów!");
+        }
+
+        return pointsValue;
+    }
+
+    /**
+     * Getting master bonus points from top ui bar.
+     * Parsing text to double if something wrong display error message via toast.
+     * @return Master bonus points.
+     */
+    public double getMasterBonus(){
+        String points = masterBonus.getText().toString();
         double pointsValue = 0;
 
         if(points.equals(null) || points.equals("")){
             points = "0";
-            _masterPoints.setText(points);
         }
 
         try{
             pointsValue = Double.valueOf(points);
         }
         catch(NumberFormatException ex){
-            displayErrorMessage("Niepoprawna liczba Twoich punktów!");
+            displayErrorMessage("Niepoprawna liczba punktów bonusowych!");
         }
 
         return pointsValue;

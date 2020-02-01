@@ -4,9 +4,9 @@
     <string name="pointsShort">pkt.</string>
 
     <string name="ownPoints">Punkty własne</string>
-    <string name="profit">Prowizja:</string>
-    <string name="groupsPoints">Punkty:</string>
-    <string name="balance">Równowaga:</string>
+    <string name="profit">PROWIZJA</string>
+    <string name="groupsPoints">PUNKTY</string>
+    <string name="balance">RÓWNOWAGA</string>
 
     <!--    Buttons     -->
     <string name="calculateBtn">Przelicz</string>

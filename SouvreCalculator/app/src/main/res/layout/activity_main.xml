@@ -44,7 +44,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="190dp"
             android:layout_weight="1"
             android:background="#743376">
 
@@ -82,47 +82,85 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/fillTextContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="0dp"
+                    android:layout_marginStart="15dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView4"
+                    <LinearLayout
+                        android:id="@+id/fillTextContainer"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/ownPoints"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textSize="14sp" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/masterPointsInsert"
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/ownPoints"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/masterPointsInsert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="0dp"
+                            android:height="80dp"
+                            android:background="@drawable/text_field"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="src_atop"
+                            android:ems="5"
+                            android:hapticFeedbackEnabled="false"
+                            android:inputType="number|numberDecimal"
+                            android:maxHeight="80dp"
+                            android:minHeight="80dp"
+                            android:shadowRadius="0"
+                            android:textColorHighlight="#9C27B0"
+                            android:textColorLink="#FFFFFF" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="27dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="3dp"
-                        android:height="80dp"
-                        android:background="@drawable/text_field"
-                        android:backgroundTint="#00FFFFFF"
-                        android:backgroundTintMode="src_atop"
-                        android:ems="6"
-                        android:hapticFeedbackEnabled="false"
-                        android:inputType="number|numberDecimal"
-                        android:maxHeight="80dp"
-                        android:minHeight="80dp"
-                        android:shadowRadius="0"
-                        android:textColorHighlight="#9C27B0"
-                        android:textColorLink="#FFFFFF" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Bonus"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/masterBonusInsert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="0dp"
+                            android:height="80dp"
+                            android:background="@drawable/text_field"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="src_atop"
+                            android:ems="5"
+                            android:hapticFeedbackEnabled="false"
+                            android:inputType="number|numberDecimal"
+                            android:maxHeight="80dp"
+                            android:minHeight="80dp"
+                            android:shadowRadius="0"
+                            android:textColorHighlight="#9C27B0"
+                            android:textColorLink="#FFFFFF" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <View
                     android:id="@+id/divider4"
                     android:layout_width="2dp"
-                    android:layout_height="50dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:background="@drawable/text_field"
@@ -130,97 +168,125 @@
                     android:backgroundTintMode="add" />
 
                 <LinearLayout
-                    android:id="@+id/textInfoContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="clip_horizontal"
-                    android:minWidth="0dp"
-                    android:orientation="vertical"
-                    android:scrollbarAlwaysDrawVerticalTrack="false">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/profitText"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/profit"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
+                        android:layout_marginStart="10sp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/groupPointsText"
-                        android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/profitText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center_horizontal"
+                            android:text="@string/profit"
+                            android:textColor="#C9FFFFFF"
+                            android:textSize="10sp"
+                            app:autoSizeTextType="none" />
+
+                        <TextView
+                            android:id="@+id/profitNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center_horizontal"
+                            android:text="XXXXX"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="3dp"
-                        android:autoText="true"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/groupsPoints"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp"
-                        app:autoSizeTextType="uniform" />
+                        android:layout_marginStart="10sp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/balanceText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/balance"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/textNumContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="clip_horizontal"
+                            android:minWidth="0dp"
+                            android:orientation="vertical"
+                            android:scrollbarAlwaysDrawVerticalTrack="false">
 
-                <LinearLayout
-                    android:id="@+id/textNumContainer"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginLeft="15dp"
-                    android:gravity="clip_horizontal"
-                    android:minWidth="0dp"
-                    android:orientation="vertical"
-                    android:scrollbarAlwaysDrawVerticalTrack="false">
+                            <TextView
+                                android:id="@+id/groupPointsText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:autoText="true"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center_horizontal"
+                                android:text="@string/groupsPoints"
+                                android:textColor="#C9FFFFFF"
+                                android:textSize="10sp"
+                                app:autoSizeTextType="none" />
 
-                    <TextView
-                        android:id="@+id/profitNum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="XXXXX"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
+                            <TextView
+                                android:id="@+id/groupPointsNum"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:autoText="true"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center_horizontal"
+                                android:text="XXXXX"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                app:autoSizeTextType="uniform" />
 
-                    <TextView
-                        android:id="@+id/groupPointsNum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="3dp"
-                        android:autoText="true"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="XXXXX"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp"
-                        app:autoSizeTextType="uniform" />
+                        </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/balanceNum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="XXXXX"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
+                        <LinearLayout
+                            android:id="@+id/textInfoContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
+                            android:gravity="clip_horizontal"
+                            android:minWidth="0dp"
+                            android:orientation="vertical"
+                            android:scrollbarAlwaysDrawVerticalTrack="false">
+
+                            <TextView
+                                android:id="@+id/balanceText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="3dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center_horizontal"
+                                android:text="@string/balance"
+                                android:textColor="#C9FFFFFF"
+                                android:textSize="10sp"
+                                app:autoSizeTextType="none" />
+
+                            <TextView
+                                android:id="@+id/balanceNum"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center_horizontal"
+                                android:text="XXXXX"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -289,7 +355,8 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
                             android:text="@string/calculateBtn"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -331,7 +398,8 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
                             android:text="@string/addGroupBtn"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 

@@ -13,6 +13,7 @@ import java.util.Map;
 
 public class PointsEngine {
     private double _mastersPoints = 0;
+    private double _masterBonus = 0;
     private int _masterLvl = 0;
     private double _profit = 0;
     private double _balancePercentage = 0;
@@ -84,6 +85,7 @@ public class PointsEngine {
         }
 
         profitSum += getProfitForValues(_masterLvl, _mastersPoints);
+        profitSum += _masterBonus;
         _profit = profitSum;
     }
     private double getProfitForValues(double lvlDiff, double points){
@@ -132,6 +134,11 @@ public class PointsEngine {
         }
 
         return groupLvl;
+    }
+
+
+    public void setMasterBonus(double bonus){
+        _masterBonus = bonus;
     }
 
     public double getPointsSum(){
