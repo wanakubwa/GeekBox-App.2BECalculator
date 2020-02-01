@@ -63,6 +63,7 @@ public class MyAdapter extends ArrayAdapter<Group> {
         // Setting texts on view.
         profitLvl.setText(String.valueOf(_groups.get(position).getProfitLvl()) + "%");
         groupName.setText("G" + (position + 1));
+        editText.setHint(_context.getString(R.string.groupPointsHint));
 
         final boolean[] isInitialize = {true};
         final Group group = getItem(position);
@@ -112,7 +113,7 @@ public class MyAdapter extends ArrayAdapter<Group> {
                 try {
                     value = Double.parseDouble(valueText);
                 } catch (NumberFormatException ex) {
-                    Toast.makeText(_context, "Zła wartość!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(_context, _context.getString(R.string.groupPointsErrorMsg), Toast.LENGTH_SHORT).show();
                     value = 0;
                 }
                 group.setPoints(value);

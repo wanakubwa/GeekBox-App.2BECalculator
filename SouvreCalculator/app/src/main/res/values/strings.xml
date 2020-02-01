@@ -3,7 +3,21 @@
     <string name="currency">zł</string>
     <string name="pointsShort">pkt.</string>
 
+<!--    Messages-->
+    <string name="ownPointsErrorMsg">Niepoprawna liczba Twoich punktów!</string>
+    <string name="bonusPointsErrorMsg">Niepoprawna liczba punktów bonusowych!</string>
+    <string name="groupPointsErrorMsg">Zła wartość punktów grupy!</string>
+
+<!--    Hints-->
+    <string name="ownPointsHint">Punkty</string>
+    <string name="ownBonusHint">Bonus</string>
+    <string name="groupPointsHint">Punkty</string>
+
+<!--    Texts fill names-->
     <string name="ownPoints">Punkty własne</string>
+    <string name="ownBonus">Bonus</string>
+
+<!--    Results names-->
     <string name="profit">PROWIZJA</string>
     <string name="groupsPoints">PUNKTY</string>
     <string name="balance">RÓWNOWAGA</string>

@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">2BE Calculator</string>
-    <string name="currency">$</string>
+    <string name="currency">\u00a3</string>
     <string name="pointsShort">pts.</string>
 
+    <!--    Messages-->
+    <string name="ownPointsErrorMsg">Incorrect number of your points!</string>
+    <string name="bonusPointsErrorMsg">Incorrect bonus points!</string>
+    <string name="groupPointsErrorMsg">Bad group points format!</string>
+
+    <!--    Hints-->
+    <string name="ownPointsHint">Points</string>
+    <string name="ownBonusHint">Bonus</string>
+    <string name="groupPointsHint">Points</string>
+
+    <!--    Texts fill names-->
     <string name="ownPoints">Own points</string>
-    <string name="profit">Profit:</string>
-    <string name="groupsPoints">Groups points:</string>
-    <string name="balance">Balance:</string>
+    <string name="ownBonus">Bonus</string>
+
+    <string name="profit">PROFIT</string>
+    <string name="groupsPoints">GROUPS POINTS</string>
+    <string name="balance">BALANCE</string>
 
     <!--    Buttons     -->
     <string name="calculateBtn">Calculate</string>

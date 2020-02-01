@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         toolSpinner.setAdapter(spinnerAdapter);
 
         // Setting default statements of texts on screen.
-        _masterPoints.setHint("Punkty");
-        masterBonus.setHint("Bonus");
+        _masterPoints.setHint(getString(R.string.ownPointsHint));
+        masterBonus.setHint(getString(R.string.ownBonusHint));
 
         _profit.setText("0" + currency);
         _pointsSum.setText("0" + pointsShort);
@@ -223,13 +223,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (points.equals(null) || points.equals("")) {
             points = "0";
-            _masterPoints.setText(points);
         }
 
         try {
             pointsValue = Double.valueOf(points);
         } catch (NumberFormatException ex) {
-            displayErrorMessage("Niepoprawna liczba Twoich punktów!");
+            displayErrorMessage(getString(R.string.ownPointsErrorMsg));
         }
 
         return pointsValue;
@@ -252,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
             pointsValue = Double.valueOf(points);
         }
         catch(NumberFormatException ex){
-            displayErrorMessage("Niepoprawna liczba punktów bonusowych!");
+            displayErrorMessage(getString(R.string.bonusPointsErrorMsg));
         }
 
         return pointsValue;

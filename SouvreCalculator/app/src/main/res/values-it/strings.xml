@@ -4,7 +4,21 @@
     <string name="currency">\u20ac</string>
     <string name="pointsShort">pun.</string>
 
+    <!--    Messages-->
+    <string name="ownPointsErrorMsg">Numero errato dei tuoi punti!</string>
+    <string name="bonusPointsErrorMsg">Punti bonus errati!</string>
+    <string name="groupPointsErrorMsg">Cattivi punti di gruppo!</string>
+
+    <!--    Hints-->
+    <string name="ownPointsHint">Punti</string>
+    <string name="ownBonusHint">Indennità</string>
+    <string name="groupPointsHint">Punti</string>
+
+    <!--    Texts fill names-->
     <string name="ownPoints">Punti propri</string>
+    <string name="ownBonus">Indennità</string>
+
+    <!--    Results names-->
     <string name="profit">Commissione:</string>
     <string name="groupsPoints">Punti gruppo:</string>
     <string name="balance">Equilibrio</string>

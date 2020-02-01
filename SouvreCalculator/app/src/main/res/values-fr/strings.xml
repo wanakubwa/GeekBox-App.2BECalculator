@@ -4,10 +4,24 @@
     <string name="currency">\u20ac</string>
     <string name="pointsShort">pts.</string>
 
+    <!--    Messages-->
+    <string name="ownPointsErrorMsg">Nombre incorrect de vos points!</string>
+    <string name="bonusPointsErrorMsg">Points bonus incorrects!</string>
+    <string name="groupPointsErrorMsg">Mauvais points de groupe!</string>
+
+    <!--    Hints-->
+    <string name="ownPointsHint">Points</string>
+    <string name="ownBonusHint">Prime</string>
+    <string name="groupPointsHint">Points</string>
+
+    <!--    Texts fill names-->
     <string name="ownPoints">Points propres</string>
-    <string name="profit">Commission:</string>
-    <string name="groupsPoints">Points de groupe:</string>
-    <string name="balance">Équilibre:</string>
+    <string name="ownBonus">Prime</string>
+
+    <!--    Results names-->
+    <string name="profit">COMMISSION</string>
+    <string name="groupsPoints">POINTS DE GROUPE</string>
+    <string name="balance">ÉQUILIBRE</string>
 
     <!--    Buttons     -->
     <string name="calculateBtn">Recalculer</string>
