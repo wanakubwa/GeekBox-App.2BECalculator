@@ -172,13 +172,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10sp"
                         android:layout_weight="1"
+                        android:gravity="center_vertical"
                         android:orientation="vertical">
 
                         <TextView
@@ -191,7 +191,7 @@
                             android:gravity="center_horizontal"
                             android:text="@string/profit"
                             android:textColor="#C9FFFFFF"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             app:autoSizeTextType="none" />
 
                         <TextView
@@ -200,24 +200,29 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="0dp"
                             android:layout_marginTop="0dp"
+                            android:fitsSystemWindows="false"
                             android:fontFamily="@font/roboto"
                             android:gravity="center_horizontal"
+                            android:maxLines="1"
                             android:text="XXXXX"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            app:autoSizeTextType="none" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="100dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10sp"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <LinearLayout
                             android:id="@+id/textNumContainer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:gravity="clip_horizontal"
                             android:minWidth="0dp"
                             android:orientation="vertical"
@@ -255,7 +260,7 @@
                             android:id="@+id/textInfoContainer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5sp"
+                            android:layout_weight="1"
                             android:gravity="clip_horizontal"
                             android:minWidth="0dp"
                             android:orientation="vertical"
@@ -266,7 +271,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="0dp"
-                                android:layout_marginTop="3dp"
                                 android:fontFamily="@font/roboto"
                                 android:gravity="center_horizontal"
                                 android:text="@string/balance"
