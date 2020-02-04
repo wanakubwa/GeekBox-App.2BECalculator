@@ -1,9 +1,9 @@
 # Android Studio app - 2BE Calc  ![GeekBox Logo](Img/48x48_Logo.png "GeekBox logo")
 
 
-Pliki źródłowe aplikacji mobilnej na system android wykonanej w środowisku Android Studio. Aplikacja służy jako ułatwienie do obliczania zarobków uzyskanych przez poszczególne grupy sprzedaży. Umożliwia wprowadzanie ilości punktów dla poszczególnych grup oraz przeprowadzanie symulacji uzyskanych progów procentowych.<br>
+Pliki źródłowe aplikacji mobilnej na system android wykonanej w środowisku Android Studio. Aplikacja służy ułatwieniu obliczania zarobków uzyskanych przez poszczególne grupy sprzedaży. Umożliwia wprowadzanie liczby punktów dla poszczególnych grup oraz przeprowadzanie symulacji uzyskanych progów procentowych.<br>
 
-Aplikacja przetłumaczona jest na język: Polski, Angielski, Niemiecki, Francuski oraz Włoski. <br>
+Aplikacja przetłumaczona jest na języki: polski, angielski, niemiecki, francuski oraz włoski. <br>
 
 ## [0.1.0] - 2020-02-04
 
@@ -12,8 +12,8 @@ Aplikacja przetłumaczona jest na język: Polski, Angielski, Niemiecki, Francusk
 - Możliwość wprowadzania punktów własnych.
 - Możliwość wprowadzenia kwoty bonusu.
 - Indywidualne ustawienie ilości punktów uzyskanych przez grupe.
-- Możliwość dodawania oraz usuawania wybranych grup.
-- Tłumaczenie aplikacji na język: Polski, Angielski, Niemiecki, Francuski oraz Włoski.
+- Możliwość dodawania oraz usuawania wybranych grupę.
+- Tłumaczenie aplikacji na języki: polski, angielski, niemiecki, francuski oraz włoski.
 
 ### Naprawiono
 
