@@ -1,4 +1,4 @@
-# Android Studio app - 2BE Calcu  ![GeekBox Logo](Img/48x48_Logo.png "GeekBox logo")
+# Android Studio app - 2BE Calc  ![GeekBox Logo](Img/48x48_Logo.png "GeekBox logo")
 
 
 Pliki źródłowe aplikacji mobilnej na system android wykonanej w środowisku Android Studio. Aplikacja służy jako ułatwienie do obliczania zarobków uzyskanych przez poszczególne grupy sprzedaży. Umożliwia wprowadzanie ilości punktów dla poszczególnych grup oraz przeprowadzanie symulacji uzyskanych progów procentowych.<br>
