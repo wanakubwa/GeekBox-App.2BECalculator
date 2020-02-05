@@ -5,6 +5,12 @@ Pliki źródłowe aplikacji mobilnej na system android wykonanej w środowisku A
 
 Aplikacja przetłumaczona jest na języki: polski, angielski, niemiecki, francuski oraz włoski. <br>
 
+<p align="center">
+<img src= "Img/Mockup_differet concepts.png" width="100%">
+  <br>
+Mockup z różnymi wersjami kolorystycznymi aplikacji. 
+</p>
+
 ## [0.1.0] - 2020-02-04
 
 ### Dodano
