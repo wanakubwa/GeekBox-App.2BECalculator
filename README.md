@@ -28,7 +28,7 @@ Mockup z różnymi wersjami kolorystycznymi aplikacji.
 - Złe otwieranie klawiatury.
 
 
-### Technologie
+## Technologie
 
 Przy tworzeniu aplikacji zostały wykorzystane następujące technologie:
 
