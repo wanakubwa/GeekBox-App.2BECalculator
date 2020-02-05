@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="190dp"
             android:layout_weight="1"
-            android:background="#743376">
+            android:background="@drawable/layout_top_rouded">
 
             <LinearLayout
                 android:layout_width="match_parent"
