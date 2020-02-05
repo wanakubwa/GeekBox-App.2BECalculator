@@ -34,11 +34,3 @@ Przy tworzeniu aplikacji zostały wykorzystane następujące technologie:
 
 - Android studio - Środowisko wykorzystane przy tworzeniu aplikacji.
 - Java - Język programowania, w którym została napisana aplikacja.
-
-## Zrzuty ekranu z gry
-
-<p align="center">
-<img src= "Img/Night_map_raw_v2.png" width="40%">
-  <br>
-Podgląd aplikacji na urządzeniu mobilnym.  
-</p>
