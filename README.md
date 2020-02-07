@@ -5,6 +5,12 @@ Pliki źródłowe aplikacji mobilnej na system android wykonanej w środowisku A
 
 Aplikacja przetłumaczona jest na języki: polski, angielski, niemiecki, francuski oraz włoski. <br>
 
+<p align="center">
+<img src= "Img/Mockup_differet concepts.png" width="100%">
+  <br>
+Mockup z różnymi wersjami kolorystycznymi aplikacji. 
+</p>
+
 ## [0.1.0] - 2020-02-04
 
 ### Dodano
@@ -22,17 +28,9 @@ Aplikacja przetłumaczona jest na języki: polski, angielski, niemiecki, francus
 - Złe otwieranie klawiatury.
 
 
-### Technologie
+## Technologie
 
 Przy tworzeniu aplikacji zostały wykorzystane następujące technologie:
 
 - Android studio - Środowisko wykorzystane przy tworzeniu aplikacji.
 - Java - Język programowania, w którym została napisana aplikacja.
-
-## Zrzuty ekranu z gry
-
-<p align="center">
-<img src= "Img/Night_map_raw_v2.png" width="40%">
-  <br>
-Podgląd aplikacji na urządzeniu mobilnym.  
-</p>
