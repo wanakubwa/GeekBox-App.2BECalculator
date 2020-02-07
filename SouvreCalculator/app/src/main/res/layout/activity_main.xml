@@ -17,10 +17,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45sp"
+            android:layout_height="65sp"
             android:background="#562763"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="20sp">
 
             <com.geekbox.souvrecalculator.MySpinner
                 android:id="@+id/toolSpinner"
@@ -44,7 +45,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="200dp"
             android:layout_weight="1"
             android:background="@drawable/layout_top_rouded">
 
@@ -57,8 +58,8 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
 
                     android:layout_marginLeft="5sp"
                     android:background="@drawable/circle_shape"
@@ -78,7 +79,7 @@
                         android:fontFamily="@font/roboto_medium"
                         android:text="0%"
                         android:textColor="#562763"
-                        android:textSize="20sp" />
+                        android:textSize="28sp" />
                 </RelativeLayout>
 
                 <LinearLayout
