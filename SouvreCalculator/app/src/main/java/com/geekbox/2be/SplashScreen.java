@@ -3,15 +3,8 @@ package com.geekbox.souvrecalculator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Fade;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -26,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 try{
                     sleep(2000);
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.geekbox.souvrecalculator.MainActivity.class);
 
                     Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(),
                             android.R.anim.fade_in, android.R.anim.fade_out).toBundle();

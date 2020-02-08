@@ -336,6 +336,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@android:color/transparent"
+                        android:foreground="?android:attr/selectableItemBackground"
                         android:gravity="left|center_vertical" />
 
                     <LinearLayout
@@ -379,6 +380,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:background="@android:color/transparent"
+                        android:foreground="?android:attr/selectableItemBackground"
                         android:gravity="left|center_vertical" />
 
                     <LinearLayout

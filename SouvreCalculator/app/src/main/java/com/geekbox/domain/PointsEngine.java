@@ -1,12 +1,9 @@
 package com.geekbox.domain;
 
-import android.util.Log;
-
 import com.geekbox.primitives.Group;
 import com.geekbox.souvrecalculator.Settings;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
