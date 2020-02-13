@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Removing top bar space.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         super.onCreate(savedInstanceState);
 

@@ -1,6 +1,5 @@
 package com.geekbox.souvrecalculator;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
