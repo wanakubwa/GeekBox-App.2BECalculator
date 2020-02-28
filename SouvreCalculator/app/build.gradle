@@ -7,9 +7,15 @@ android {
         applicationId "com.geekbox.souvrecalculator"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName '1.1'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    bundle{
+
+        language {
+            enableSplit = false
+        }
     }
     buildTypes {
         release {

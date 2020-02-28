@@ -2,7 +2,9 @@ package com.geekbox.souvrecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -283,5 +285,27 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setMasterLvlOnScreen(int value){
         _masterLvl.setText(String.valueOf(value) + "%");
+    }
+
+    public void buttonInfoClick(View v) {
+        alertDialog();
+    }
+
+    private void alertDialog() {
+        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+
+        dlgAlert.setMessage(getString(R.string.infoBoxContent));
+        dlgAlert.setTitle(getString(R.string.infoBoxTitle));
+        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.setCancelable(true);
+
+        dlgAlert.create().show();
+
+        dlgAlert.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+//dismiss the dialog
+                    }
+                });
     }
 }

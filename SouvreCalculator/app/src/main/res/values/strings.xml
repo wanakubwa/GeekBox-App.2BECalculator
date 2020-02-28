@@ -27,6 +27,10 @@
     <string name="addGroupBtn">Nowa grupa</string>
     <string name="rowGroupPoints">Punkty</string>
 
+    <!--    Info Box     -->
+    <string name="infoBoxContent">Kalkulator liczy prowizję tylko dla I-szego planu marketingowego. Już od obrotu 50k punktów możesz być w II-gim planie, w którym prowizja jest z obrotu globalnego firmy. Kalkulator nie wylicza prowizji dla II-giego planu marketingowego i nie uwzględnia pozycji dyrektorskich.</string>
+    <string name="infoBoxTitle">Informacja</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Usuń</item>
     </string-array>

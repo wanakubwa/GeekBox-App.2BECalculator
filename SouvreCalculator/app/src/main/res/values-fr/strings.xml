@@ -28,6 +28,10 @@
     <string name="addGroupBtn">Nouveau groupe</string>
     <string name="rowGroupPoints">Points</string>
 
+    <!--    Info Box     -->
+    <string name="infoBoxContent">Le calculateur ne compte la commission que pour le premier plan de commercialisation. À partir dun chiffre d\'affaires de 50 000 points, vous pouvez vous retrouver dans le deuxième plan où la commission provient du chiffre d\'affaires global de l\'entreprise. Le calculateur ne calcule pas les commissions pour le deuxième plan de marketing et ne tient pas compte des positions des directeurs.</string>
+    <string name="infoBoxTitle">Informations</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Supprimer</item>
     </string-array>

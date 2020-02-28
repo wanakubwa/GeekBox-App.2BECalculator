@@ -27,6 +27,10 @@
     <string name="addGroupBtn">Add group</string>
     <string name="rowGroupPoints">Points</string>
 
+    <!--    Info Box     -->
+    <string name="infoBoxContent">The calculator counts the commission only for the first marketing plan. From a 50k point turnover you can be in the second plan where the commission is from the global company turnover. The calculator does not calculate commissions for the second marketing plan and does not take into account the directors positions.</string>
+    <string name="infoBoxTitle">Information</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Delete</item>
     </string-array>

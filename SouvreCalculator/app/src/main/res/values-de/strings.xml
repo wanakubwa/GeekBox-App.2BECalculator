@@ -26,6 +26,10 @@
     <string name="addGroupBtn">Neue Gruppe</string>
     <string name="rowGroupPoints">Punkte</string>
 
+    <!--    Info Box     -->
+    <string name="infoBoxContent">Der Rechner zählt die Provision nur für den ersten Marketingplan. Ab einem Umsatz von 50. 000 Punkten können Sie in den zweiten Plan aufgenommen werden, bei dem die Provision aus dem Umsatz des globalen Unternehmens stammt. Der Rechner berechnet keine Provisionen für den zweiten Marketingplan und berücksichtigt nicht die Positionen der Direktoren.</string>
+    <string name="infoBoxTitle">Informationen</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Löschen Sie</item>
     </string-array>

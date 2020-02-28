@@ -28,6 +28,10 @@
     <string name="addGroupBtn">Nuovo gruppo</string>
     <string name="rowGroupPoints">Punti</string>
 
+    <!--    Info Box     -->
+    <string name="infoBoxContent">Il calcolatore conta la commissione solo per il primo piano di marketing. Da un fatturato di 50. 000 punti si può essere nel secondo piano in cui la commissione proviene dal fatturato globale dell\'azienda. Il calcolatore non calcola le commissioni per il secondo piano di marketing e non tiene conto delle posizioni degli amministratori.</string>
+    <string name="infoBoxTitle">Informazioni</string>
+
     <string-array name="itemListSpinnerActions">
         <item>Cancellare</item>
     </string-array>
